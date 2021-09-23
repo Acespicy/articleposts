@@ -19,7 +19,7 @@ function Loading({ navigation }) {
               }
             }});
        } else {
-          navigation.navigate("Authentication");
+          navigation.navigate("WelcomeNavigator");
        }
      });
    }
