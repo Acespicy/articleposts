@@ -56,6 +56,7 @@ const BottomNavigator = () => {
         name="Post Navigator"
         component={PostNavigator}
         options={{
+          title: "Posts",
           headerShown: false, 
           tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="book-multiple" color={color} size={size}/>
         }}

@@ -6,7 +6,7 @@ import SignupScreen from '../screens/SignupScreen';
 import SignInScreen from '../screens/SignInScreen';
 import Loading from '../screens/Loading';
 import BottomNavigator from './BottomNavigator';
-import NoInternetScreen from '../screens/NoInternetScreen';
+import RegistrationSuccessScreen from '../screens/RegistrationSuccessScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +32,14 @@ const AuthNavigator = () => {
       <Stack.Screen 
         name="Loading"
         component={Loading}
+        options={{
+          headerShown: false
+        }}
+      />
+
+      <Stack.Screen 
+        name="Registration Success"
+        component={RegistrationSuccessScreen}
         options={{
           headerShown: false
         }}

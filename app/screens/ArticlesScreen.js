@@ -37,7 +37,7 @@ function ArticlesScreen({ navigation }) {
 
   const getArticles = async () => {
      try {
-      const response = await fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-08-22&sortBy=publishedAt&apiKey=9b623a82db90411da0dfe1f9f5bafb34');
+      const response = await fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-08-23&sortBy=publishedAt&apiKey=9b623a82db90411da0dfe1f9f5bafb34');
       const json = await response.json();
       setData(json.articles.slice(0, 10));
     } catch (error) {
@@ -50,6 +50,17 @@ function ArticlesScreen({ navigation }) {
   useEffect(() => {
     getArticles();
   }, []);
+
+  
+  useEffect(
+    () => {
+     firebase.auth().onAuthStateChanged((user) => {
+       if (!user) {
+          navigation.navigate("Sign In")
+        }
+     });
+   }
+ );
 
   //logout 
   const logout = async() => {

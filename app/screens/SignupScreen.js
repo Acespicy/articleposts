@@ -50,7 +50,7 @@ const signUp = async() => {
       })
           //set isloading to false
           setIsLoading(false);
-          navigation.navigate("BottomNavigation");
+          navigation.navigate("Registration Success", {fname: firstname.toUpperCase(), sname: surname.toUpperCase()});
   }catch(err){
     //set isloading to false
     setIsLoading(false);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View } from 'react-native';
 
 //app custom components
 import ViewArticleScreen from '../screens/ViewArticleScreen';
@@ -10,7 +9,8 @@ import SignInScreen from '../screens/SignInScreen';
 
 const Stack = createNativeStackNavigator();
 
-function ArticlesNavigator(props) {
+function ArticlesNavigator({ navigation }) {
+
   return (
     <Stack.Navigator>
       <Stack.Screen 

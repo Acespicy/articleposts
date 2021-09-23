@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View, StyleSheet } from 'react-native';
 import firebase from '../firebase/Fire';
 
@@ -22,6 +22,26 @@ function SignInScreen({ navigation }) {
     checkConnect().then(res => {
       setIsConnect(res);
     })
+
+  //check if user is logged 
+  useEffect(
+    () => {
+     firebase.auth().onAuthStateChanged((user) => {
+       if (user) {
+         navigation.navigate("BottomNavigation", {
+            screen: 'Home', 
+            params: { 
+              params: {
+                screen: 'Posts', 
+                params: { 
+                  userid: user.uid
+                }
+              }
+            }});
+        }
+     });
+   }
+ );
     
     const signIn = async () => {
       setError('');

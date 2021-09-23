@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, View, StyleSheet, Text, ScrollView } from 'react-native';
-import Constants from 'expo-constants';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 //app custom components
